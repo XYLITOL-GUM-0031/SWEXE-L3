@@ -1,0 +1,18 @@
+<% if @bookmark.errors.any? %>
+  <div class="flash flash-danger">
+    <p><%= pluralize(@bookmark.errors.count, "error") %> が発生しました:</p>
+    <ul>
+      <% @bookmark.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with(model: @bookmark, local: true) do |f| %>
+  <div class="form-group">
+    <%= f.label :title, class: "form-label" %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <%= f.submit "保存", class: "btn btn-primary" %>
+<% end %>
