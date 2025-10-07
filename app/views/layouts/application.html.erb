@@ -15,41 +15,23 @@
   </head>
 
   <body>
-    <!-- ヘッダー -->
-    <header class="site-header">
-      <div class="header-inner">
-        <h1 class="logo"><%= link_to "Myapp", root_path %></h1>
-        <nav class="nav">
-          <%= link_to "ホーム", root_path %>
-          <%= link_to "一覧", bookmarks_path %>
-          <%= link_to "新規登録", new_bookmark_path %>
-        </nav>
+    <div id="container">
+      <div id="header">
+        <%= render "layouts/header" %>
       </div>
-    </header>
 
-    <div class="layout">
-      <!-- サイドバー -->
-      <aside class="sidebar">
-        <h3>メニュー</h3>
-        <ul>
-          <li><%= link_to "トップページ", root_path %></li>
-          <li><%= link_to "ブックマーク一覧", bookmarks_path %></li>
-          <li><%= link_to "新規登録", new_bookmark_path %></li>
-        </ul>
-      </aside>
+      <div id="sidebar">
+        <%= render "layouts/sidebar" %>
+      </div>
 
-      <!-- メイン -->
-      <main class="main-content">
-        <div class="container">
-          <%= render "layouts/flash" %>
-          <%= yield %>
-        </div>
-      </main>
+      <div id="content">
+        <%= render "layouts/flash" %>
+        <%= yield %>
+      </div>
+
+      <div id="footer">
+        <%= render "layouts/footer" %>
+      </div>
     </div>
-
-    <!-- フッター -->
-    <footer class="site-footer">
-      <p>&copy; 2025 Myapp All Rights Reserved.</p>
-    </footer>
   </body>
 </html>

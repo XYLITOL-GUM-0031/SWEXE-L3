@@ -9,9 +9,12 @@
         </div>
         <div class="card-body">
           <div class="actions">
-            <%= link_to "表示", bookmark, class: "btn btn-outline" %>
+            <%= link_to "表示", bookmark_path(bookmark), class: "btn btn-outline" %>
             <%= link_to "編集", edit_bookmark_path(bookmark), class: "btn btn-primary" %>
-            <%= button_to "削除", bookmark, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger" %>
+            <%= button_to "削除", bookmark_path(bookmark),
+                method: :delete,
+                data: { confirm: "本当に削除しますか？" },
+                class: "btn btn-danger" %>
           </div>
         </div>
       </div>
